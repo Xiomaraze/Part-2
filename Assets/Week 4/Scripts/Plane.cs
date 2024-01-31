@@ -15,6 +15,11 @@ public class Plane : MonoBehaviour
     public float speed = 1;
     public AnimationCurve landing;
     float landingtimer;
+    SpriteRenderer spriteRenderer;
+    public Sprite s1;
+    public Sprite s2;
+    public Sprite s3;
+    public Sprite s4;
 
     private void Start()
     {
@@ -22,6 +27,14 @@ public class Plane : MonoBehaviour
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, transform.position);
         rigbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        speed = Random.Range(1, 3);
+        float ranSprite = Random.Range(1, 4);
+        if (ranSprite < 2)
+        {
+            spriteRenderer.sprite = s1;
+        }
+        else if((ranSprite >) //note for later, greater that 2 seconds less than 3
     }
 
     private void FixedUpdate()
