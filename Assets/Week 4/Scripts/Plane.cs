@@ -80,7 +80,7 @@ public class Plane : MonoBehaviour
         {
             points.Add(currentPosition);
             lineRenderer.positionCount++;
-            lineRenderer.SetPosition (0, currentPosition);
+            lineRenderer.SetPosition (lineRenderer.positionCount -1, currentPosition);
             lastPos = currentPosition;
         }
     }
