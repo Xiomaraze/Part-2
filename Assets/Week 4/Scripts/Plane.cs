@@ -34,7 +34,18 @@ public class Plane : MonoBehaviour
         {
             spriteRenderer.sprite = s1;
         }
-        else if((ranSprite >) //note for later, greater that 2 seconds less than 3
+        else if((ranSprite >= 2) && (ranSprite < 3))
+        {
+            spriteRenderer.sprite = s2;
+        } //note for later, greater that 2 seconds less than 3
+        else if((ranSprite >= 3)  && (ranSprite < 4))
+        {
+            spriteRenderer.sprite = s3;
+        }
+        else
+        {
+            spriteRenderer.sprite = s4;
+        }
     }
 
     private void FixedUpdate()
