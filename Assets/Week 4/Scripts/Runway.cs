@@ -11,15 +11,6 @@ public class Runway : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Plane plane = collision.GetComponent<Plane>();
-    //    if (boxCollider.OverlapPoint(collision.transform.position))
-    //    {
-    //        plane.landed = true;
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Plane plane = collision.gameObject.GetComponent<Plane>();
