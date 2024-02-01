@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
@@ -93,7 +94,14 @@ public class Plane : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        spriteRenderer.color = Color.red;
+        if (other.gameObject.name == "Runway")
+        {
+            spriteRenderer.color = Color.white;
+        }
+        else
+        {
+            spriteRenderer.color = Color.red;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
