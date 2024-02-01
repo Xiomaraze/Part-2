@@ -15,6 +15,9 @@ public class Plane : MonoBehaviour
     public float speed = 1;
     public AnimationCurve landing;
     float landingtimer;
+    
+    public float collisionDist;
+
     SpriteRenderer spriteRenderer;
     public Sprite s1;
     public Sprite s2;
@@ -84,6 +87,25 @@ public class Plane : MonoBehaviour
                 lineRenderer.positionCount--;
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        spriteRenderer.color = Color.red;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        float dist = Vector3.Distance(gameObject.transform.position, other.transform.position);
+        if (dist <= collisionDist)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        spriteRenderer.color = Color.white;
     }
 
     private void OnMouseDown()
