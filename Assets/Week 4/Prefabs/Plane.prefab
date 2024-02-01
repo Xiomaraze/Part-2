@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6943629216365817192}
   - component: {fileID: 7385904360008709367}
   - component: {fileID: 902821120015871052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +212,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  landed: 0
   collisionDist: 0.3
   s1: {fileID: 21300000, guid: c73a14ae579ec794db786a6cb7b74e20, type: 3}
   s2: {fileID: 21300000, guid: 24c052ba7e2db304696a436c1d715f04, type: 3}

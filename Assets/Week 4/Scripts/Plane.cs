@@ -15,6 +15,8 @@ public class Plane : MonoBehaviour
     public float speed = 1;
     public AnimationCurve landing;
     float landingtimer;
+
+    public bool landed = false;
     
     public float collisionDist;
 
@@ -65,7 +67,7 @@ public class Plane : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (landed)
         {
             landingtimer += 0.1f * Time.deltaTime;
             float interpolation = landing.Evaluate(landingtimer);
