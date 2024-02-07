@@ -30,8 +30,12 @@ public class Knight : MonoBehaviour
         if ((Input.GetMouseButtonDown(0)) && hurt==false)
         {
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            animator.SetFloat("Movement", direction.magnitude);
         }
-        animator.SetFloat("Movement", direction.magnitude);
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Attack();
+        }
     }
 
     private void FixedUpdate() //movement and collision in fixed update
@@ -71,5 +75,10 @@ public class Knight : MonoBehaviour
         {
             animator.SetTrigger("TakeDamage");
         }
+    }
+
+    public void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 }
