@@ -13,6 +13,7 @@ public class Knight : MonoBehaviour
     public float hp;
     public float maxHp = 5;
     bool dead;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +49,7 @@ public class Knight : MonoBehaviour
     {
         if (dead) return;
         hurt = true;
-        TakeDamage(1);
+        gameObject.SendMessage("TakeDamage", 1, SendMessageOptions.DontRequireReceiver);
     }
 
     private void OnMouseUp()
@@ -56,8 +57,9 @@ public class Knight : MonoBehaviour
         hurt = false;
     }
 
-    void TakeDamage(float dmg)
+    public void TakeDamage(float dmg)
     {
+        Debug.Log("calling damage");
         hp -= dmg;
         hp = Mathf.Clamp(hp, 0, maxHp);
         if (hp <= 0)
