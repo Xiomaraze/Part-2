@@ -16,6 +16,9 @@ public class Distance : MonoBehaviour
     void Start()
     {
         text = textobj.GetComponent<TextMesh>();
+        travelPoints = new List<Vector2>();
+        Vector2 current = pc.transform.position;
+        travelPoints.Add(current);
     }
 
     // Update is called once per frame
