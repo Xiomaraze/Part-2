@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 948690236}
   - component: {fileID: 948690235}
   - component: {fileID: 948690237}
+  - component: {fileID: 948690238}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -388,6 +389,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!95 &948690238
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948690232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1011101143
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +939,7 @@ MonoBehaviour:
   pc: {fileID: 948690232}
   textobj: {fileID: 1691448064}
   compass: {fileID: 2121716161}
-  ghost: {fileID: 0}
+  ghost: {fileID: 1583821200}
 --- !u!1 &2121716161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,8 +1043,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b243236bf1cf44749919b681c13db7b3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
