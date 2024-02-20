@@ -12,7 +12,7 @@ public class Distance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,10 +24,10 @@ public class Distance : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 last = travelPoints.Last();
-        float dist = Vector2.Distance(last, transform.position);
+        float dist = Vector2.Distance(last, pc.transform.position);
         if (dist > distSinceLast)
         {
-            travelPoints.Add(transform.position);
+            travelPoints.Add(pc.transform.position);
             distance += dist;
         }
     }
@@ -36,7 +36,7 @@ public class Distance : MonoBehaviour
     public void Restart()
     {
         travelPoints = new List<Vector2>();
-        Vector2 cur = transform.position;
+        Vector2 cur = pc.transform.position;
         travelPoints.Add(cur);
         distance = 0;
     }
