@@ -13,6 +13,11 @@ public class Distance : MonoBehaviour
     public GameObject pc;
     public GameObject textobj;
     TextMeshProUGUI text;
+
+    public GameObject compass;
+    Direction dirScript;
+
+    public GameObject ghost;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,9 @@ public class Distance : MonoBehaviour
         travelPoints = new List<Vector2>();
         Vector2 current = pc.transform.position;
         travelPoints.Add(current);
+        dirScript = compass.GetComponent<Direction>();
+        ghost.transform.position = current;
+
     }
 
     // Update is called once per frame
@@ -36,6 +44,9 @@ public class Distance : MonoBehaviour
         {
             travelPoints.Add(pc.transform.position);
             distance += dist;
+            Vector2 direct = last - travelPoints.First();
+            direct.Normalize();
+            compass.SendMessage("Rotate", direct);
         }
     }
 
@@ -46,5 +57,6 @@ public class Distance : MonoBehaviour
         Vector2 cur = pc.transform.position;
         travelPoints.Add(cur);
         distance = 0;
+        ghost.transform.position = cur;
     }
 }
