@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class Distance : MonoBehaviour
@@ -9,16 +10,18 @@ public class Distance : MonoBehaviour
     public float distSinceLast;
     public List<Vector2> travelPoints;
     public GameObject pc;
+    public GameObject textobj;
+    TextMesh text;
     // Start is called before the first frame update
     void Start()
     {
-
+        text = textobj.GetComponent<TextMesh>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        text.text = "Steps Taken: " + distance.ToString();
     }
 
     private void FixedUpdate()
