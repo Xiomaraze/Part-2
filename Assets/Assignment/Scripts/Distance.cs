@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor.UI;
 using UnityEngine;
 
@@ -11,11 +12,11 @@ public class Distance : MonoBehaviour
     public List<Vector2> travelPoints;
     public GameObject pc;
     public GameObject textobj;
-    TextMesh text;
+    TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-        text = textobj.GetComponent<TextMesh>();
+        text = textobj.GetComponent<TextMeshProUGUI>();
         travelPoints = new List<Vector2>();
         Vector2 current = pc.transform.position;
         travelPoints.Add(current);
