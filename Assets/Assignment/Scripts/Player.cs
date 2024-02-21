@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     Vector2 dest;
     Vector2 distance;
     float buffer;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         buffer = 0.1f;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,6 +43,11 @@ public class Player : MonoBehaviour
             distance = Vector2.zero;
         }
         rb.MovePosition(rb.position + distance.normalized * speed * Time.deltaTime);
+        anim.SetFloat("Horizontal", distance.magnitude);
         //scootch towards the target destination
+    }
+    public void Recolor()
+    {
+        anim.SetTrigger("Recolor");
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEditor.UI;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class Distance : MonoBehaviour
@@ -16,6 +17,7 @@ public class Distance : MonoBehaviour
 
     public GameObject compass;
     Direction dirScript;
+    Animator anim;
 
     public GameObject ghost;
     // Start is called before the first frame update
@@ -27,13 +29,14 @@ public class Distance : MonoBehaviour
         travelPoints.Add(current);
         dirScript = compass.GetComponent<Direction>();
         ghost.transform.position = current;
-
+        anim = pc.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         text.text = "Steps Taken: " + distance.ToString();
+        
     }
 
     private void FixedUpdate()
@@ -53,6 +56,7 @@ public class Distance : MonoBehaviour
     //resets the list with the button use and sets the first point in the travel distance list to the objects current position
     public void Restart()
     {
+        anim.SetTrigger("Reset");
         travelPoints = new List<Vector2>();
         Vector2 cur = pc.transform.position;
         travelPoints.Add(cur);
